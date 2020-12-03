@@ -1,10 +1,10 @@
 package org.example.dao;
 
+import com.tx.pojo.Payment;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.example.pojo.Payment;
 
 import java.util.List;
 

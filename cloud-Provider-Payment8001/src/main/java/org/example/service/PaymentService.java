@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.pojo.Payment;
+import com.tx.pojo.Payment;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
 package com.order.controller;
 
-import com.order.pojo.CommonResult;
-import com.order.pojo.Payment;
+
+import com.tx.pojo.CommonResult;
+import com.tx.pojo.Payment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

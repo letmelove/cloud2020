@@ -1,8 +1,8 @@
 package org.example.service.impl;
 
+import com.tx.pojo.Payment;
 import org.example.dao.PaymentDao;
 import org.example.service.PaymentService;
-import org.example.pojo.Payment;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

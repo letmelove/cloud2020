@@ -11,6 +11,12 @@
 
     <artifactId>cloud-Provider-Payment8001</artifactId>
     <dependencies>
+        <!--引入自定义api包（这里是把多个模块中一样的实体类提取出来打成jar）   -->
+        <dependency>
+            <groupId>org.tx.cloudapicommons</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--对全栈web开发的支持， 包括Tomcat和spring-webmvc-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
