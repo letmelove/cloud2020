@@ -10,13 +10,23 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: root
-      #DevTools的检测时间和idea的编译所需时间存在差异。在idea还没完成编译工作前，DevTools就开始进行重启和加载，导致@RequestMapping没有被全部正常处理
+    #DevTools的检测时间和idea的编译所需时间存在差异。在idea还没完成编译工作前，DevTools就开始进行重启和加载，导致@RequestMapping没有被全部正常处理
       #解决牺牲一点时间，去加长devtools的轮询时间，增大等待时间（轮询时间要比等待时间大）
   devtools:
     restart:
       poll-interval: 2s
       quiet-period: 1s
 
+eureka:
+  client:
+    #表示是否将自己注册到eureka server中默认为true
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-pack: org.example.pojo    #所有实体别名类所在包
+  #type-aliases-pack: org.example.pojo    #所有实体别名类所在包
+
