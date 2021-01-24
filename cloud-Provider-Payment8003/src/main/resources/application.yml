@@ -28,7 +28,7 @@ eureka:
       defaultZone: http://eurekaServer7001:7001/eureka,http://eurekaServer7002:7002/eureka,http://eurekaServer7003:7003/eureka
   #修改eureka中的主机名称
   instance:
-    instance-id: payment001
+    instance-id: payment002
     #eureka中访问路径显示ip
     prefer-ip-address: true
 

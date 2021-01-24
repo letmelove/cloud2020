@@ -11,3 +11,8 @@ eureka:
     service-url:
       #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址(这里是集群配置，还需要在hosts文件中配置：访问地址+hostname)
       defaultZone: http://eurekaServer7002:7002/eureka,http://eurekaServer7003:7003/eureka
+  #server:
+    #关闭自我保护机制，保证不可用服务被及时剔除
+    enable-self-preservation: false
+    #配置2秒的心跳检测频率
+    eviction-interval-timer-in-ms: 2000
