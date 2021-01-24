@@ -1,5 +1,0 @@
-com\order\controller\OrderController.class
-com\order\OrderApp.class
-com\order\config\ApplicationContextConfig.class
-com\order\pojo\Payment.class
-com\order\pojo\CommonResult.class

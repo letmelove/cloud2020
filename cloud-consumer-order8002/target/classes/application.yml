@@ -1,12 +1,13 @@
 server:
   port: 8002
+
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver     #mysql驱动
-    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-    username: root
-    password: root
+  #datasource:
+    #type: com.alibaba.druid.pool.DruidDataSource
+    #driver-class-name: com.mysql.cj.jdbc.Driver     #mysql驱动
+    #url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    #username: root
+    #password: root
   #DevTools的检测时间和idea的编译所需时间存在差异。在idea还没完成编译工作前，DevTools就开始进行重启和加载，导致@RequestMapping没有被全部正常处理
   #解决牺牲一点时间，去加长devtools的轮询时间，增大等待时间（轮询时间要比等待时间大）
   devtools:
@@ -15,6 +16,7 @@ spring:
       quiet-period: 1s
   application:
     name: cloud-sonsumer-order
+
 eureka:
   client:
     #表示是否将自己注册到eureka server中默认为true
@@ -22,4 +24,5 @@ eureka:
     #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
     fetchRegistry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      #注册eureka集群
+      defaultZone: http://eurekaServer7001:7001/eureka,http://eurekaServer7002:7002/eureka,http://eurekaServer7003:7003/eureka

@@ -11,9 +11,11 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 @RestController
 public class OrderController {
-
-    public static final String PAYMENT_URL = "http://localhost:8001";
-
+    //单机版时使用的地址
+    //public static final String PAYMENT_URL = "http://localhost:8001";
+    //负载均衡后使用服务名作为地址(这里需要@LoadBalanced注解来开启负载均衡)
+    //这里一定要加http://
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 

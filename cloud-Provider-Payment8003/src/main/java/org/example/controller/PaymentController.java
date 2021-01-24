@@ -41,7 +41,7 @@ public class PaymentController {
         Payment payment=paymentService.getPaymentById(id);
         log.info("查询结果:"+payment.toString());
         if(payment!=null){
-            return new CommonResult(200,"查询数据库成功,serverPort:"+serverPort,payment.toString());
+            return new CommonResult(200,"插入数据库成功，端口为："+serverPort,payment.toString());
         }
         return new CommonResult(500,"插入数据库失败，端口为："+serverPort,null);
     }
@@ -51,7 +51,7 @@ public class PaymentController {
         List<Payment> paymentList =paymentService.getPaymentAll();
         log.info("结果为："+paymentList.toString());
         if(paymentList!=null){
-            return new CommonResult(200,"查询成功,serverPort:"+serverPort,paymentList.toString());
+            return new CommonResult(200,"查询成功，端口为："+serverPort,paymentList.toString());
         }
         return new CommonResult(500,"查询失败，端口为："+serverPort,null);
     }
